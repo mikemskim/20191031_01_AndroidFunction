@@ -10,7 +10,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        mainTextViewName.text=intent.getStringExtra("name")+"님이 로그인 하였습니다."
-        mainTextViewNumber.text=intent.getStringExtra("number")+"번 회원"
+        var receivedName = intent.getStringExtra("name")
+        var receivedNumber = intent.getStringExtra("number")
+        var receivedId = intent.getStringExtra("id")
+
+        mainTextViewName.text="${receivedName}(${receivedId})"
+        mainTextViewNumber.text="${receivedNumber}번 회원"
+
     }
 }
